@@ -9,11 +9,24 @@
       "UnauthRoleName": "amplify-nextamplify-dev-150856-unauthRole",
       "StackName": "amplify-nextamplify-dev-150856",
       "StackId": "arn:aws:cloudformation:us-east-2:940838507809:stack/amplify-nextamplify-dev-150856/dcc6e140-8c5a-11ed-9753-06a7710d5c6e",
-      "AmplifyAppId": "d2k74ywydp40ym"
+      "AmplifyAppId": "d2k74ywydp40ym",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-nextamplify-dev-150856-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "api": {
         "nextamplify": {}
+      },
+      "auth": {
+        "authnextamplify": {}
+      },
+      "function": {
+        "authnextamplifyCustomMessage": {
+          "REDIRECTURL": "www.humankind.co",
+          "EMAILSUBJECT": "Confirmation email",
+          "EMAILMESSAGE": "Confirmation link",
+          "deploymentBucketName": "amplify-nextamplify-dev-150856-deployment",
+          "s3Key": "amplify-builds/authnextamplifyCustomMessage-7542626b307932343343-build.zip"
+        }
       }
     }
   }

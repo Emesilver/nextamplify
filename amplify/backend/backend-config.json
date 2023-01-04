@@ -16,5 +16,92 @@
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
     }
+  },
+  "auth": {
+    "authnextamplify": {
+      "customAuth": false,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "authnextamplifyCustomMessage",
+          "triggerProvider": "Cognito"
+        }
+      ],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "ON",
+        "mfaTypes": [
+          "TOTP"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "authnextamplifyCustomMessage": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_authnextamplifyCustomMessage_EMAILMESSAGE": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "authnextamplifyCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_authnextamplifyCustomMessage_EMAILSUBJECT": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "authnextamplifyCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_authnextamplifyCustomMessage_REDIRECTURL": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "authnextamplifyCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_authnextamplifyCustomMessage_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "authnextamplifyCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_authnextamplifyCustomMessage_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "authnextamplifyCustomMessage"
+        }
+      ]
+    }
   }
 }
